@@ -1,7 +1,10 @@
 // run `node index.js` in the terminal
 var express = require('express');
+var cors = require('cors');
 var app = express();
 var fs = require('fs');
+
+app.use(cors());
 
 app.get('/getShift', function (req, res) {
   // Get current time object with locale set to Riyadh
