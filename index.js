@@ -26,6 +26,8 @@ app.get('/getShift', function (req, res) {
         } else {
           return shifts[i - 1];
         }
+      } else if (i === shifts.length - 1) {
+        return shifts[i];
       }
     }
   }
