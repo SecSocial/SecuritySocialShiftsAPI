@@ -22,7 +22,7 @@ app.get('/getShift', function (req, res) {
     for (let i = 0; i < shifts.length; i++) {
       if (current_time < shifts[i].starts) {
         if (i === 0) {
-          return shifts.slice(-1);
+          return shifts.slice(-1)[0];
         } else {
           return shifts[i - 1];
         }
