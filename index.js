@@ -4,9 +4,14 @@ var cors = require('cors');
 var app = express();
 var fs = require('fs');
 
-app.use(cors());
+// app.use(cors());
 
-app.get('/getShift', function (req, res) {
+const corsOptions = {
+  origin: 'https://securitysocial.com',
+  optionsSuccessStatus: 200,
+};
+
+app.get('/getShift', cors(corsOptions), function (req, res) {
   // Get current time object with locale set to Riyadh
   function getCurrentTimeKSA() {
     return new Date().toLocaleString('en-US', {
