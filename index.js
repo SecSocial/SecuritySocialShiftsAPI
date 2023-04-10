@@ -7,7 +7,7 @@ var fs = require('fs');
 // app.use(cors());
 
 const corsOptions = {
-  origin: 'https://amn24.com',
+  origin: 'https://secure.sa',
   optionsSuccessStatus: 200,
 };
 
