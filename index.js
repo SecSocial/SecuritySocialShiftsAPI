@@ -4,7 +4,7 @@ var cors = require('cors');
 var app = express();
 var fs = require('fs');
 
-// app.use(cors());
+app.use(cors());
 
 // const corsOptions = {
 //   origin: 'https://secure.sa',
