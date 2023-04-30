@@ -6,12 +6,12 @@ var fs = require('fs');
 
 // app.use(cors());
 
-const corsOptions = {
-  origin: 'https://secure.sa',
-  optionsSuccessStatus: 200,
-};
+// const corsOptions = {
+//   origin: 'https://secure.sa',
+//   optionsSuccessStatus: 200,
+// };
 
-app.get('/getShift', cors(corsOptions), function (req, res) {
+app.get('/getShift', function (req, res) {
   // Get current time object with locale set to Riyadh
   function getCurrentTimeKSA() {
     return new Date().toLocaleString('en-US', {
