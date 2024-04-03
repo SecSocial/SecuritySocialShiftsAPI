@@ -1,18 +1,17 @@
-FROM node:slim
+FROM node:20-alpine3.18
 
-WORKDIR /usr/src/app
+RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
 
-COPY package.json .
+WORKDIR /home/node/app
 
-RUN npm install
-
-COPY . .
-
-ENV NODE_ENV=production
-ENV PORT 3001
-
-EXPOSE 3001
+COPY package*.json ./
 
 USER node
 
-CMD [ "npm", "start" ]
+RUN npm install
+
+COPY --chown=node:node . .
+
+EXPOSE 8080
+
+CMD [ "node", "index.js" ]
